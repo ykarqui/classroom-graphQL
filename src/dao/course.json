@@ -1,0 +1,12 @@
+[
+    {
+        "id": "1",
+        "name": "NodeJS & GraphQL",
+        "description": "Designing Evolvable Web APIs with Express"
+    },
+    {
+        "id": "2",
+        "name": "Java",
+        "description": "An In-Depth Course for Programmers"
+    }
+]

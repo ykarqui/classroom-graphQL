@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "name": "Marijn",
+        "last_name": "Haverbeke",
+        "course_id": "1"
+    },
+    {
+        "id": "2",  
+        "name": "Addy",
+        "last_name": "Osmani",
+        "course_id": "1"
+    },
+    {
+        "id": "3",
+        "name": "Nicholas",
+        "last_name": "Zakas",
+        "course_id": "2"
+    },
+    {
+        "id": "4",
+        "name": "Richard",
+        "last_name": "Silverman",
+        "course_id": "1"
+    },
+    {
+        "id": "5",
+        "name": "Kyle",
+        "last_name": "Simpson",
+        "course_id": "2"
+    }
+]
