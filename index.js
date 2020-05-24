@@ -95,7 +95,7 @@ const RootQueryType = new GraphQLObjectType({
             args: {
                 id: { type: GraphQLInt }
             },
-            resolve: (parent, args) => students.find(student => student.id === args.id)
+            resolve: (parent, args) => students.find(student => student.id == args.id)
         },
         course: {
             type: CourseType,
@@ -103,7 +103,7 @@ const RootQueryType = new GraphQLObjectType({
             args: {
                 id: { type: GraphQLInt }
             },
-            resolve: (parent, args) => courses.find(course => course.id === args.id)
+            resolve: (parent, args) => courses.find(course => course.id == args.id)
         },
         grade: {
             type: GradeType,
@@ -111,7 +111,7 @@ const RootQueryType = new GraphQLObjectType({
             args: {
                 id: { type: GraphQLInt }
             },
-            resolve: (parent, args) => grades.find(grade => grade.id === args.id)
+            resolve: (parent, args) => grades.find(grade => grade.id == args.id)
         }
 
     }),
