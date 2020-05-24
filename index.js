@@ -131,7 +131,7 @@ const RootMutationType = new GraphQLObjectType({
             },
             resolve: (parent, args) => {
                 const course = {
-                    id: course.length + 1,
+                    id: courses.length + 1,
                     name: args.name,
                     description: args.description
                 }
