@@ -8,3 +8,6 @@ $ npm i
 
 #### Node version
 v 14.3.0
+
+#### NPM version
+v 6.14.5
