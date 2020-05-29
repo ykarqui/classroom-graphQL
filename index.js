@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const expressGraphQL = require('express-graphql');
+const _ = require('lodash');
+
 const {
     GraphQLSchema,
     GraphQLObjectType,
@@ -176,7 +178,53 @@ const RootMutationType = new GraphQLObjectType({
                 students.push(student)
                 return student
             }
-        }
+        },
+        // No puedo hacer el delete dentro de la mutacion 
+        // usando lodash [ _.remove ]
+        // "message": "Cannot return null for non-nullable field
+        deleteStudent: {
+            type: StudentType,
+            description: 'Delete a student',
+            args: {
+                id: { type:(GraphQLInt) }
+            },
+            resolve: (parent, args) => {
+                _.remove(students, (student) => {
+                    return student.id == args.id;
+                });
+                return students;
+            }
+        } ,
+        // "message": "Cannot return null for non-nullable field
+        deleteCourse: {
+            type: CourseType,
+            description: 'Delete a Course',
+            args: {
+                id: { type:(GraphQLInt) }
+            },
+            resolve: (parent, args) => {
+                _.remove(courses, (course) => {
+                    return course.id == args.id;
+                });
+                return courses;
+            }
+        } ,
+        // "message": "Cannot return null for non-nullable field
+        deleteGrade: {
+            type: GradeType,
+            description: 'Delete a grade',
+            args: {
+                id: { type:(GraphQLInt) }
+            },
+            resolve: (parent, args) => {
+                _.remove(grades, (grade) => {
+                    return grade.id == args.id;
+                });
+                return grades;
+            }
+        } 
+
+
     })
 })
 
