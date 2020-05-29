@@ -1,10 +1,10 @@
-#### STEPS TO RUN ####
+# STEPS TO RUN
 
-# To run with NODEMON
+#### To run with NODEMON
 $ npm run dev
 
-# Install dependencies
+#### Install dependencies
 $ npm i
 
-# Node version
+#### Node version
 v 14.3.0
