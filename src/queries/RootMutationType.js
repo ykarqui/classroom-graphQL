@@ -8,6 +8,9 @@ const CourseType = require('../types/CourseType');
 const StudentType = require('../types/StudentType');
 const GradeType = require('../types/GradeType');
 
+// lodash to manage arrays
+let _ = require('lodash');
+
 const {
     GraphQLObjectType,
     GraphQLString,
@@ -86,10 +89,10 @@ const RootMutationType = new GraphQLObjectType({
                 id: { type:(GraphQLInt) }
             },
             resolve: (parent, args) => {
-                _.remove(students, (student) => {
+                let currentStudents =_.remove(students, (student) => {
                     return student.id == args.id;
                 });
-                return students;
+                return currentStudents;
             }
         } ,
         // "message": "Cannot return null for non-nullable field
@@ -100,10 +103,10 @@ const RootMutationType = new GraphQLObjectType({
                 id: { type:(GraphQLInt) }
             },
             resolve: (parent, args) => {
-                _.remove(courses, (course) => {
+                let currentCourses = _.remove(courses, (course) => {
                     return course.id == args.id;
                 });
-                return courses;
+                return currentCourses;
             }
         } ,
         // "message": "Cannot return null for non-nullable field
@@ -114,10 +117,10 @@ const RootMutationType = new GraphQLObjectType({
                 id: { type:(GraphQLInt) }
             },
             resolve: (parent, args) => {
-                _.remove(grades, (grade) => {
+                let currentGrades = _.remove(grades, (grade) => {
                     return grade.id == args.id;
                 });
-                return grades;
+                return currentGrades;
             }
         } 
 
