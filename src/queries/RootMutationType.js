@@ -15,7 +15,8 @@ const {
     GraphQLObjectType,
     GraphQLString,
     GraphQLNonNull,
-    GraphQLInt
+    GraphQLInt,
+    GraphQLList
 } = require('graphql');
 
 
@@ -83,7 +84,7 @@ const RootMutationType = new GraphQLObjectType({
         // usando lodash [ _.remove ]
         // "message": "Cannot return null for non-nullable field
         deleteStudent: {
-            type: StudentType,
+            type: new GraphQLList(StudentType),
             description: 'Delete a student',
             args: {
                 id: { type:(GraphQLInt) }
@@ -97,10 +98,10 @@ const RootMutationType = new GraphQLObjectType({
         } ,
         // "message": "Cannot return null for non-nullable field
         deleteCourse: {
-            type: CourseType,
+            type: new GraphQLList(CourseType),
             description: 'Delete a Course',
             args: {
-                id: { type:(GraphQLInt) }
+                id: { type: GraphQLInt }
             },
             resolve: (parent, args) => {
                 let currentCourses = _.remove(courses, (course) => {
@@ -111,7 +112,7 @@ const RootMutationType = new GraphQLObjectType({
         } ,
         // "message": "Cannot return null for non-nullable field
         deleteGrade: {
-            type: GradeType,
+            type: new GraphQLList(GradeType),
             description: 'Delete a grade',
             args: {
                 id: { type:(GraphQLInt) }
